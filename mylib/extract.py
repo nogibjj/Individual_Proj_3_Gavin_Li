@@ -8,7 +8,7 @@ import base64
 load_dotenv()
 server_h = os.getenv("SERVER_HOSTNAME")
 access_token = os.getenv("ACCESS_TOKEN")
-FILESTORE_PATH = "dbfs:/FileStore/mini_project11"
+FILESTORE_PATH = "dbfs:/FileStore/individual3"
 headers = {'Authorization': 'Bearer %s' % access_token}
 url = "https://"+server_h+"/api/2.0"
 
@@ -65,10 +65,8 @@ def put_file_from_url(url, dbfs_path, overwrite, headers):
 
 
 def extract(
-        url="""https://github.com/fivethirtyeight/data/blob/master/tennis-time/serve_times.csv?raw=true""",
-        url2="""https://github.com/fivethirtyeight/data/blob/master/tennis-time/events_time.csv?raw=true""",
-        file_path=FILESTORE_PATH+"/serve_times.csv",
-        file_path2=FILESTORE_PATH+"/event_times.csv",
+        url="""https://raw.githubusercontent.com/nogibjj/Individual_Proj_2_Gavin_Li/main/resources/train.csv""",
+        file_path=FILESTORE_PATH+"/train.csv",
         directory=FILESTORE_PATH,
         overwrite=True
 ):
@@ -77,9 +75,8 @@ def extract(
     mkdirs(path=directory, headers=headers)
     # Add the csv files, no need to check if it exists or not
     put_file_from_url(url, file_path, overwrite, headers=headers)
-    put_file_from_url(url2, file_path2, overwrite, headers=headers)
 
-    return file_path, file_path2
+    return file_path
 
 
 if __name__ == "__main__":
