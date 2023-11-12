@@ -11,7 +11,9 @@ def load(dataset="dbfs:/FileStore/individual3/train.csv"):
 
     # transform into a delta lakes table and store it 
     df.write.format("delta").mode("overwrite").saveAsTable("titanic_delta")
-    columns_to_drop = ["PassengerId", "Name", "Age", "SibSp", "Parch", "Ticket", "Fare", "Cabin", "Embarked"]
+    columns_to_drop = ["PassengerId", "Name", "Age",
+                       "SibSp", "Parch", "Ticket",
+                       "Fare", "Cabin", "Embarked"]
     df = df.drop(*columns_to_drop)
     print(df)
     num_rows = df.count()

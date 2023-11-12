@@ -41,7 +41,7 @@ def viz():
     fig, ax = plt.subplots()
     bars1 = ax.bar(x - width / 2, not_sur, width, label="Not Survived")
     bars2 = ax.bar(x + width / 2, sur, width, label="Survived")
-
+    print(bars1, bars2)
     ax.set_ylabel("Count")
     ax.set_title("Survival Count by Gender")
     ax.set_xticks(x)
