@@ -27,4 +27,6 @@ The purpose of this project is to build a ETL data pipeline on Databricks, and a
 
 ## Result of `make format`, `make lint`, `make test`
 
+![rslt_make](./resources/rslt_make.png)
+
 ## Reference
