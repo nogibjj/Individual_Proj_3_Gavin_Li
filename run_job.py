@@ -6,6 +6,7 @@ load_dotenv()
 access_token = os.getenv("ACCESS_TOKEN")
 job_id = os.getenv("JOB_ID")
 server_h = os.getenv("SERVER_HOSTNAME")
+# print(server_h)
 
 url = f"https://{server_h}/api/2.0/jobs/run-now"
 

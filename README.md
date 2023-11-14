@@ -9,19 +9,21 @@ The purpose of this project is to build an ETL data pipeline on Databricks, auto
 
 ## ETL data pipeline
 
-- [E]xtract
+- __[E]xtract__
 
   Retrived the data from the data source using python `requests` package, then stored the data in databricks using the `dbfs` protocol as a `.csv` file.
 
-- [T]ransform
+- __[T]ransform__
 
-  Dropped unnecessary columns, leaving only the variables that are useful to later analysis (e.g., `Survived`, `Sex`, `Pclass`)
+  Dropped unnecessary columns, leaving only the variables that are useful to later analysis (e.g., `Survived`, `Sex`, `Pclass`) using __`PySpark`__.
 
-- [L]oad
+- __[L]oad__
 
-  Loaded the transformed data set into a delta lake table as a data sink.
+  Loaded the transformed data set into a __delta lake table__ as a data sink.
 
 ## Insight, Data visualization, Conclusion
+
+I __queried__ the delta lake table to get some insights from it regarding the imbalance of survival rate in different gender, and made the following __visualizations__.
 
 - Visualization 1: Survival rate of Titanic passengers by gender
 
