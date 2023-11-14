@@ -7,6 +7,12 @@ The purpose of this project is to build an ETL data pipeline on Databricks, auto
 
 ## Video explanation
 
+[Here is the link to the video that explains this project](www.youtube.com)
+
+## Dataset
+
+The Titanic dataset, a comprehensive collection of passenger information from the infamous 1912 maritime disaster, offers an overview for exploring various facets of machine learning and data analysis, including data on demographics, ticket class, fare, and survival, thereby serving as a cornerstone in predictive modeling and historical insights.
+
 ## ETL data pipeline
 
 - __[E]xtract__
@@ -33,9 +39,17 @@ I __queried__ the delta lake table to get some insights from it regarding the im
 
 ![viz2](./resources/viz2.png)
 
+- __Insight__
+
+The Titanic dataset analysis reveals a significant imbalance in survival rates between genders. Women had a markedly higher survival rate compared to men, highlighting the impact of the "women and children first" protocol during the disaster.
+
 ## Databricks Workflow
 
 - Automated trigger
+
+The ETL pipeline workflow is automated using databricks workflow and `run_job.py` script, which sends a POST request to the server to start a specified job, given a `JOB_ID`. Here is the result of the workflow:
+
+![workflow](./resources/rslt_workflow.png)
 
 ## Result of `make format`, `make lint`, `make test`
 
