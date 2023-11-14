@@ -3,7 +3,7 @@
 Gavin Li `gl183`
 
 ## Purpose of the project
-The purpose of this project is to build a ETL data pipeline on Databricks, and automate the workflow on the platform.
+The purpose of this project is to build an ETL data pipeline on Databricks, automate the workflow on the platform, then find some insights from the data.
 
 ## Video explanation
 
@@ -11,15 +11,25 @@ The purpose of this project is to build a ETL data pipeline on Databricks, and a
 
 - [E]xtract
 
-  from online source, request, store in databrick file system (`dbfs:/` protocol)
+  Retrived the data from the data source using python `requests` package, then stored the data in databricks using the `dbfs` protocol as a `.csv` file.
+
 - [T]ransform
 
-  Drop columns
+  Dropped unnecessary columns, leaving only the variables that are useful to later analysis (e.g., `Survived`, `Sex`, `Pclass`)
+
 - [L]oad
 
-  load into delta lake
+  Loaded the transformed data set into a delta lake table as a data sink.
 
 ## Insight, Data visualization, Conclusion
+
+- Visualization 1: Survival rate of Titanic passengers by gender
+
+![viz1](./resources/viz1.png)
+
+- Visualization 2: Count of survived / not survived of Titanic passengers by gender
+
+![viz2](./resources/viz2.png)
 
 ## Databricks Workflow
 
@@ -30,3 +40,4 @@ The purpose of this project is to build a ETL data pipeline on Databricks, and a
 ![rslt_make](./resources/rslt_make.png)
 
 ## Reference
+[Professor Noah's ruff template](https://github.com/nogibjj/python-ruff-template)
